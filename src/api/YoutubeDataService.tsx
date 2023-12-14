@@ -27,7 +27,10 @@ const getYoutubeData = async (url: string) => {
       title: videoInfo.title,
       description: videoInfo.description,
       publishedAt: videoInfo.publishedAt,
-      thumbnailUrl: videoInfo.thumbnails?.default?.url || "",
+      thumbnailUrl:
+        videoInfo.thumbnails?.maxres?.url ||
+        videoInfo.thumbnails?.hqdefault?.url ||
+        "",
       viewCount: videoStatistics.viewCount || 0,
       likeCount: videoStatistics.likeCount || 0,
       commentCount: videoStatistics.commentCount || 0,
