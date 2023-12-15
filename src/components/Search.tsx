@@ -18,6 +18,19 @@ const Search = () => {
     setComments(commentsData);
   };
 
+  function formatViews(views) {
+    const formatter = new Intl.NumberFormat();
+    return formatter.format(views);
+  }
+
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}.${month}.${day}`;
+  }
+
   return (
     <Container>
       <Label>You can check out the recommended comments!</Label>
@@ -40,8 +53,8 @@ const Search = () => {
           <VideoTitle>{videoInfo.title}</VideoTitle>
           <VideoInfo>
             <VideoInfoLeft>
-              <Text>{videoInfo.viewCount}views</Text>
-              <Text>{videoInfo.publishedAt}</Text>
+              <Text>{formatViews(videoInfo.viewCount)}views</Text>
+              <Text>{formatDate(videoInfo.publishedAt)}</Text>
             </VideoInfoLeft>
             <VideoInfoRight>
               <LikeIcon src={likeIcon} alt="like icon" />
@@ -61,10 +74,10 @@ const Search = () => {
                 <InfoItem>
                   <AuthorTime>
                     <Text>{comment.author}</Text>
-                    <TimeText>{comment.publishedAt}</TimeText>
+                    <TimeText>{formatDate(comment.publishedAt)}</TimeText>
                   </AuthorTime>
                   <Text>{comment.text}</Text>
-                  <Text>{comment.likeCount}</Text>
+                  <Text>{formatViews(comment.likeCount)}</Text>
                 </InfoItem>
               </CommentItem>
             ))}
@@ -151,6 +164,7 @@ const AuthorTime = styled.div`
 
 const Text = styled.p`
   color: #ffff;
+  margin-right: 8px;
 `;
 
 const TimeText = styled.p`
