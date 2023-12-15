@@ -4,7 +4,7 @@ import getYoutubeComments from "../api/CommentDataService";
 import { YouTubeVideo } from "../utility/type";
 import { YouTubeComment } from "../utility/type";
 import styled from "styled-components";
-
+import likeIcon from "../../public/assets/like.svg";
 const Search = () => {
   const [videoLink, setVideoLink] = useState<string>("");
   const [videoInfo, setVideoInfo] = useState<YouTubeVideo | null>(null);
@@ -38,8 +38,16 @@ const Search = () => {
             alt={videoInfo.thumbnailUrl}
           />
           <VideoTitle>{videoInfo.title}</VideoTitle>
-          <Text>{videoInfo.publishedAt}</Text>
-          <Text>{videoInfo.likeCount}</Text>
+          <VideoInfo>
+            <VideoInfoLeft>
+              <Text>{videoInfo.viewCount}views</Text>
+              <Text>{videoInfo.publishedAt}</Text>
+            </VideoInfoLeft>
+            <VideoInfoRight>
+              <LikeIcon src={likeIcon} alt="like icon" />
+              <Text>{videoInfo.likeCount}</Text>
+            </VideoInfoRight>
+          </VideoInfo>
         </InfoContainer>
       )}
 
@@ -51,20 +59,12 @@ const Search = () => {
             .map((comment, index) => (
               <CommentItem key={index}>
                 <InfoItem>
-                  <Title>Author:</Title>
-                  <Text>{comment.author}</Text>
-                </InfoItem>
-                <InfoItem>
-                  <Title>likeCount:</Title>
-                  <Text>{comment.likeCount}</Text>
-                </InfoItem>
-                <InfoItem>
-                  <Title>Text:</Title>
+                  <AuthorTime>
+                    <Text>{comment.author}</Text>
+                    <TimeText>{comment.publishedAt}</TimeText>
+                  </AuthorTime>
                   <Text>{comment.text}</Text>
-                </InfoItem>
-                <InfoItem>
-                  <Title>Published At:</Title>
-                  <Text>{comment.publishedAt}</Text>
+                  <Text>{comment.likeCount}</Text>
                 </InfoItem>
               </CommentItem>
             ))}
@@ -127,18 +127,39 @@ const VideoTitle = styled.p`
   font-size: 24px;
   color: #ffff;
 `;
+
+const VideoInfo = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const VideoInfoLeft = styled.div`
+  display: flex;
+`;
+
+const VideoInfoRight = styled.div`
+  display: flex;
+`;
 const InfoItem = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Title = styled.p`
-  font-weight: bold;
-  font-size: 20px;
+const AuthorTime = styled.div`
+  display: flex;
 `;
 
 const Text = styled.p`
   color: #ffff;
+`;
+
+const TimeText = styled.p`
+  color: #737373;
+  margin-left: 8px;
+`;
+
+const LikeIcon = styled.img`
+  width: 20px;
 `;
 
 const Thumbnail = styled.img``;
@@ -146,9 +167,7 @@ const Thumbnail = styled.img``;
 const CommentsContainer = styled.div``;
 
 const CommentItem = styled.div`
-  border-color: purple;
-  border-style: solid;
-  border-width: 1px;
+  border: 2px solid #303030;
   display: flex;
   flex-direction: column;
 `;
