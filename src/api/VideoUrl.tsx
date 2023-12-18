@@ -13,7 +13,7 @@ const extractVideoIdFromUrl = (url: string): string | null => {
         return videoId;
       }
     } else if (urlObject.hostname === "youtu.be") {
-      const videoId = urlObject.pathname.substr(1);
+      const videoId = urlObject.pathname.slice(1);
 
       if (videoId) {
         return videoId;

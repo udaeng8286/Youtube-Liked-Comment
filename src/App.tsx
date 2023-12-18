@@ -1,19 +1,21 @@
 // import { useState } from "react";
 import styled from "styled-components";
 
-import Search from "./components/Search";
+import Mainpage from "./pages/Mainpage";
 import "./App.css";
 
 function App() {
   return (
     <Container>
-      <Search />
+      <Mainpage />
     </Container>
   );
 }
 export default App;
 
 const Container = styled.div`
-  width: 768px;
+  max-width: 768px;
+  width: 100%;
   height: 100%;
+  margin: 0 auto;
 `;

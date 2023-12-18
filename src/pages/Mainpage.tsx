@@ -1,13 +1,13 @@
 import { useState } from "react";
-import VideoLinkInput from "./VideoLinkInput";
-import VideoInformation from "./VideoInformation";
-import Comments from "./Comments";
+import VideoLinkInput from "../components/VideoLinkInput";
+import VideoInformation from "../components/VideoInformation";
+import Comments from "../components/Comments";
 import getYoutubeData from "../api/YoutubeDataService";
 import getYoutubeComments from "../api/CommentDataService";
 import { YouTubeVideo, YouTubeComment } from "../utility/type";
 import styled from "styled-components";
 
-const Search = () => {
+const Mainpage = () => {
   const [videoInfo, setVideoInfo] = useState<YouTubeVideo | null>(null);
   const [comments, setComments] = useState<YouTubeComment[] | null>(null);
 
@@ -34,7 +34,7 @@ const Search = () => {
 
   return (
     <Container>
-      <Label>You can check out the recommended comments!</Label>
+      <Guide>You can check out the recommended comments!</Guide>
       <VideoLinkInput onSearch={handleSearch} />
       <VideoInfoContainer>
         {videoInfo && (
@@ -56,7 +56,8 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Mainpage;
+
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -65,12 +66,12 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Label = styled.span`
+const Guide = styled.span`
   color: white;
-  font-size: 32px;
+  font-size: 2em;
 `;
 
 const VideoInfoContainer = styled.div`
-  margin-top: 40px;
+  margin-top: 4%;
   width: 100%;
 `;

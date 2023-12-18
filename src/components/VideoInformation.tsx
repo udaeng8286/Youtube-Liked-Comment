@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import likeIcon from "../../public/assets/like.svg";
 import { YouTubeVideo } from "../utility/type";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 interface VideoInfoProps {
   videoInfo: YouTubeVideo;
   formatViews: (views: number) => string;
@@ -19,7 +19,7 @@ const VideoInfo = ({ videoInfo, formatViews, formatDate }: VideoInfoProps) => {
           <Text>{formatDate(videoInfo.publishedAt)}</Text>
         </Left>
         <Right>
-          <LikeIcon src={likeIcon} alt="like icon" />
+          <LikeIcon icon={faThumbsUp} />
           <Text>{videoInfo.likeCount}</Text>
         </Right>
       </Section>
@@ -38,8 +38,8 @@ const Container = styled.div`
 const Thumbnail = styled.img``;
 
 const VideoTitle = styled.p`
-  margin: 12px 0px;
-  font-size: 24px;
+  margin: 1em 0;
+  font-size: 1.5em;
   color: #ffff;
 `;
 
@@ -54,14 +54,16 @@ const Left = styled.div`
 
 const Text = styled.p`
   color: #ffff;
-  margin-right: 8px;
+  margin-right: 0.5em;
 `;
 
 const Right = styled.div`
   display: flex;
+  align-items: center;
 `;
 
-const LikeIcon = styled.img`
-  width: 20px;
-  margin-right: 8px;
+const LikeIcon = styled(FontAwesomeIcon)`
+  font-size: 1.3em;
+  color: #ffff;
+  margin-right: 0.5em;
 `;

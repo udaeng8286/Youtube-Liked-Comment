@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { YouTubeComment } from "../utility/type";
-import likeIcon from "../../public/assets/like.svg";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 interface CommentsProps {
   comments: YouTubeComment[];
   formatViews: (views: number) => string;
@@ -32,7 +32,7 @@ const Comments = ({ comments, formatViews, formatDate }: CommentsProps) => {
                 }}
               />
               <Like>
-                <LikeIcon src={likeIcon} alt="like icon" />
+                <LikeIcon icon={faThumbsUp} />
                 <Text>{formatViews(comment.likeCount)}</Text>
               </Like>
             </CommentItem>
@@ -46,7 +46,7 @@ export default Comments;
 
 const OuterContainer = styled.div`
   border-top: 2px solid #303030;
-  margin-top: 24px;
+  margin-top: 2%;
 `;
 
 const Container = styled.div`
@@ -56,7 +56,7 @@ const Container = styled.div`
 const CommentItem = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 4%;
 `;
 
 const AuthorTime = styled.div`
@@ -71,17 +71,18 @@ const Like = styled.div`
   align-items: center;
 `;
 
-const LikeIcon = styled.img`
-  width: 20px;
-  margin-right: 8px;
+const LikeIcon = styled(FontAwesomeIcon)`
+  font-size: 1.3em;
+  color: #ffff;
+  margin-right: 0.5em;
 `;
 
 const Text = styled.p`
   color: #ffff;
-  margin: 8px 0px;
+  margin: 1% 0;
 `;
 
 const TimeText = styled.p`
   color: #737373;
-  margin-left: 8px;
+  margin-left: 0.5em;
 `;

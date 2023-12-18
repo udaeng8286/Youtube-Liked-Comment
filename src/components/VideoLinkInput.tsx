@@ -32,9 +32,9 @@ const VideoLinkInput = ({ onSearch }: VideoLinkInputProps) => {
 export default VideoLinkInput;
 
 const Section = styled.div`
-  height: 40px;
+  height: 3em;
   display: flex;
-  margin-top: 32px;
+  margin-top: 2em;
 `;
 
 const Input = styled.input`
@@ -42,7 +42,7 @@ const Input = styled.input`
   background-color: #181818;
   border: 2px solid #303030;
   color: #ffffff;
-  padding: 8px;
+  padding: 0.5em;
   box-sizing: border-box;
   border-radius: 0;
   &::placeholder {
@@ -51,10 +51,11 @@ const Input = styled.input`
 `;
 
 const Button = styled.div`
-  width: 64px;
+  width: 10%;
   color: #ffff;
   background-color: #303030;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;

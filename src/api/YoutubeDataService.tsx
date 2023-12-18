@@ -12,9 +12,9 @@ const getYoutubeData = async (url: string) => {
       throw new Error("Invalid YouTube video link");
     }
 
-    const response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet,statistics&key=${key}`
-    );
+    const youtubeApiUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet,statistics&key=${key}`;
+
+    const response = await axios.get(youtubeApiUrl);
 
     const videoInfo = response.data.items[0]?.snippet;
     const videoStatistics = response.data.items[0]?.statistics;
