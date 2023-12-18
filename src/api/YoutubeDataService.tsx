@@ -40,7 +40,7 @@ const getYoutubeData = async (url: string) => {
     return youTubeVideo;
   } catch (error) {
     console.error("Error fetching YouTube video information:", error);
-    return null;
+    throw error;
   }
 };
 

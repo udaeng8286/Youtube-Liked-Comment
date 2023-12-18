@@ -1,26 +1,34 @@
 import styled from "styled-components";
-import { YouTubeVideo } from "../utility/type";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-interface VideoInfoProps {
-  videoInfo: YouTubeVideo;
-  formatViews: (views: number) => string;
-  formatDate: (dateString: string) => string;
-}
+import { formatViews, formatDate } from "../utility/util";
 
-const VideoInfo = ({ videoInfo, formatViews, formatDate }: VideoInfoProps) => {
+import { useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
+
+const VideoInfo = () => {
+  const thumbnailUrl = useAppSelector(
+    (state: RootState) => state.video.thumbnailUrl
+  );
+  const title = useAppSelector((state: RootState) => state.video.title);
+  const viewCount = useAppSelector((state: RootState) => state.video.viewCount);
+  const publishedAt = useAppSelector(
+    (state: RootState) => state.video.publishedAt
+  );
+  const likeCount = useAppSelector((state: RootState) => state.video.likeCount);
+
   return (
     <Container>
-      <Thumbnail src={videoInfo.thumbnailUrl} alt={videoInfo.thumbnailUrl} />
-      <VideoTitle>{videoInfo.title}</VideoTitle>
+      <Thumbnail src={thumbnailUrl} alt={thumbnailUrl} />
+      <VideoTitle>{title}</VideoTitle>
       <Section>
         <Left>
-          <Text>{formatViews(videoInfo.viewCount)} views</Text>
-          <Text>{formatDate(videoInfo.publishedAt)}</Text>
+          <Text>{formatViews(viewCount)} views</Text>
+          <Text>{formatDate(publishedAt)}</Text>
         </Left>
         <Right>
           <LikeIcon icon={faThumbsUp} />
-          <Text>{videoInfo.likeCount}</Text>
+          <Text>{likeCount}</Text>
         </Right>
       </Section>
     </Container>
