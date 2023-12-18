@@ -1,15 +1,19 @@
 import { useState, ChangeEvent } from "react";
 import styled from "styled-components";
 
-interface VideoLinkInputProps {
-  onSearch: (link: string) => void;
-}
+import getYoutubeData from "../api/YoutubeDataService";
+import { useAppDispatch } from "../redux/hooks";
+import { AppDispatch } from "../redux/store";
+import { setVideo } from "../redux/VideoSlice";
 
-const VideoLinkInput = ({ onSearch }: VideoLinkInputProps) => {
+const VideoLinkInput = () => {
   const [videoLink, setVideoLink] = useState<string>("");
 
-  const handleSearch = () => {
-    onSearch(videoLink);
+  const dispatch: AppDispatch = useAppDispatch();
+
+  const handleSearch = async () => {
+    const videoData = await getYoutubeData(videoLink);
+    dispatch(setVideo(videoData));
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +54,7 @@ const Input = styled.input`
   }
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   width: 10%;
   color: #ffff;
   background-color: #303030;

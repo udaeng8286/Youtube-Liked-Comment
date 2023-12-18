@@ -12,4 +12,4 @@ export type AppDispatch = typeof store.dispatch; // useAppDispatch
 
 export default store;
 
-// useSelector(리덕스에 작성한 변수 접근 조회), useDispatch(변수 업데이트)
+// useAppSelector(리덕스에 작성한 변수 접근 조회), useAppDispatch(변수 업데이트)
