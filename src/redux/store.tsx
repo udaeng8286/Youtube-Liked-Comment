@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import videoReducer from "./VideoSlice";
 import commentReducer from "./CommentSlice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
 const store = configureStore({
   reducer: {
