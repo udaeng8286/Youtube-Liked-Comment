@@ -2,9 +2,11 @@ import { useState, ChangeEvent } from "react";
 import styled from "styled-components";
 
 import getYoutubeData from "../api/YoutubeDataService";
+import getYoutubeComments from "../api/CommentDataService";
 import { useAppDispatch } from "../redux/hooks";
 import { AppDispatch } from "../redux/store";
 import { setVideo } from "../redux/VideoSlice";
+import { setComment } from "../redux/CommentSlice";
 
 const VideoLinkInput = () => {
   const [videoLink, setVideoLink] = useState<string>("");
@@ -14,6 +16,13 @@ const VideoLinkInput = () => {
   const handleSearch = async () => {
     const videoData = await getYoutubeData(videoLink);
     dispatch(setVideo(videoData));
+
+    const commentData = await getYoutubeComments(videoLink);
+    console.log(commentData);
+    if (commentData !== null) {
+      dispatch(setComment(commentData));
+    }
+    console.log(commentData);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

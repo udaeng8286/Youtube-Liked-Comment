@@ -1,7 +1,9 @@
 import axios from "axios";
-import key from "./ApiKey";
+// import key from "./ApiKey";
 import { YouTubeComment } from "../utility/type";
 import extractVideoIdFromUrl from "./VideoUrl";
+
+const key = "AIzaSyD4XZ8ewKdT6YeSFaLv8AEjyNPNNR6wX9g";
 
 const getYoutubeComments = async (
   url: string
@@ -34,6 +36,7 @@ const getYoutubeComments = async (
       nextPageToken = response.data.nextPageToken;
     } while (nextPageToken);
 
+    console.log(comments);
     return comments;
   } catch (error) {
     console.error("Error fetching YouTube comments:", error);
