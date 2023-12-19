@@ -18,11 +18,9 @@ const VideoLinkInput = () => {
     dispatch(setVideo(videoData));
 
     const commentData = await getYoutubeComments(videoLink);
-    console.log(commentData);
     if (commentData !== null) {
       dispatch(setComment(commentData));
     }
-    console.log(commentData);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
