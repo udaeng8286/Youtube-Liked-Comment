@@ -1,12 +1,25 @@
 import { configureStore } from "@reduxjs/toolkit";
 import videoReducer from "./VideoSlice";
 import commentReducer from "./CommentSlice";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
+import { combineReducers } from "@reduxjs/toolkit";
+
+const persistConfig = {
+  key: "root",
+  storage, // localStorage
+  whitelist: ["video", "comment"], // 지속시킬 리듀서
+};
+
+const reducer = combineReducers({
+  video: videoReducer,
+  comment: commentReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 const store = configureStore({
-  reducer: {
-    video: videoReducer,
-    comment: commentReducer,
-  },
+  reducer: persistedReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>; // useAppSelector
