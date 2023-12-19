@@ -7,28 +7,20 @@ import { useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
 
 const VideoInfo = () => {
-  const thumbnailUrl = useAppSelector(
-    (state: RootState) => state.video.thumbnailUrl
-  );
-  const title = useAppSelector((state: RootState) => state.video.title);
-  const viewCount = useAppSelector((state: RootState) => state.video.viewCount);
-  const publishedAt = useAppSelector(
-    (state: RootState) => state.video.publishedAt
-  );
-  const likeCount = useAppSelector((state: RootState) => state.video.likeCount);
+  const videoInfo = useAppSelector((state: RootState) => state.video);
 
   return (
     <Container>
-      <Thumbnail src={thumbnailUrl} alt={thumbnailUrl} />
-      <VideoTitle>{title}</VideoTitle>
+      <Thumbnail src={videoInfo.thumbnailUrl} alt={videoInfo.thumbnailUrl} />
+      <VideoTitle>{videoInfo.title}</VideoTitle>
       <Section>
         <Left>
-          <Text>{formatViews(viewCount)} views</Text>
-          <Text>{formatDate(publishedAt)}</Text>
+          <Text>{formatViews(videoInfo.viewCount)} views</Text>
+          <Text>{formatDate(videoInfo.publishedAt)}</Text>
         </Left>
         <Right>
           <LikeIcon icon={faThumbsUp} />
-          <Text>{likeCount}</Text>
+          <Text>{videoInfo.likeCount}</Text>
         </Right>
       </Section>
     </Container>

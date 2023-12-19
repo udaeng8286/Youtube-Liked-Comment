@@ -1,18 +1,26 @@
 import styled from "styled-components";
-import { YouTubeComment } from "../utility/type";
+// import { YouTubeComment } from "../utility/type";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-interface CommentsProps {
-  comments: YouTubeComment[];
-  formatViews: (views: number) => string;
-  formatDate: (dateString: string) => string;
-}
+import { useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
 
-const Comments = ({ comments, formatViews, formatDate }: CommentsProps) => {
+import { formatDate, formatViews } from "../utility/util";
+
+// interface CommentsProps {
+//   comments: YouTubeComment[];
+//   formatViews: (views: number) => string;
+//   formatDate: (dateString: string) => string;
+// }
+
+const Comments = () => {
   // HTML 태그를 제거하는 함수
   const removeHTMLTags = (text: string) => {
     return text.replace(/<\/?[^>]+(>|$)/g, "");
   };
+
+  const comments = useAppSelector((state: RootState) => state.comment);
+  console.log(comments);
 
   return (
     <OuterContainer>

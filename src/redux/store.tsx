@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import videoReducer from "./VideoSlice";
+import commentReducer from "./CommentSlice";
 
 const store = configureStore({
   reducer: {
     video: videoReducer,
+    comment: commentReducer,
   },
 });
 
