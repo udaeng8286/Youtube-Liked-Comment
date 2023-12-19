@@ -37,7 +37,7 @@ const getYoutubeComments = async (
     return comments;
   } catch (error) {
     console.error("Error fetching YouTube comments:", error);
-    return null;
+    throw error;
   }
 };
 
