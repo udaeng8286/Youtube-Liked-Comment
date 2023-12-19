@@ -8,14 +8,18 @@ import { combineReducers } from "@reduxjs/toolkit";
 const persistConfig = {
   key: "root",
   storage, // localStorage
-  whiteList: ["video", "comment"],
+  whitelist: ["video", "comment"], // 지속시킬 리듀서
 };
 
+const reducer = combineReducers({
+  video: videoReducer,
+  comment: commentReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 const store = configureStore({
-  reducer: {
-    video: videoReducer,
-    comment: commentReducer,
-  },
+  reducer: persistedReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>; // useAppSelector
