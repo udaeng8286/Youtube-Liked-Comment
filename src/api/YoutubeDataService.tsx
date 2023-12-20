@@ -2,8 +2,6 @@ import axios from "axios";
 import { YouTubeVideo } from "../utility/type";
 import extractVideoIdFromUrl from "./VideoUrl";
 
-const key = "AIzaSyD4XZ8ewKdT6YeSFaLv8AEjyNPNNR6wX9g";
-
 const getYoutubeData = async (url: string) => {
   console.log(key);
   try {
