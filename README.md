@@ -1,4 +1,6 @@
-<!-- ![Group 4](https://github.com/HomeSecurityTeam/Youtube-Liked-Comment/assets/130089426/384f77ac-da92-4f0c-aab4-9a9ff1ed2345) -->
+<div align="center">
+  <img src="https://github.com/HomeSecurityTeam/Youtube-Liked-Comment/assets/130089426/86feca5b-e98b-4d7b-ae62-d7d68eddd0a6" width="240">
+</div>
 <main align="center">
     <h3 align="center">👍유튜브 영상의 댓글을 좋아요가 많은 순서대로 볼 수 있어요!🗨️</h3> 
 </main>
