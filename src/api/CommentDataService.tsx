@@ -2,6 +2,8 @@ import axios from "axios";
 import { YouTubeComment } from "../utility/type";
 import extractVideoIdFromUrl from "./VideoUrl";
 
+const key = import.meta.env.VITE_APP_API_ENDPOINT;
+
 const getYoutubeComments = async (
   url: string
 ): Promise<YouTubeComment[] | null> => {

@@ -2,8 +2,9 @@ import axios from "axios";
 import { YouTubeVideo } from "../utility/type";
 import extractVideoIdFromUrl from "./VideoUrl";
 
+const key = import.meta.env.VITE_APP_API_ENDPOINT;
+
 const getYoutubeData = async (url: string) => {
-  console.log(key);
   try {
     const videoId = extractVideoIdFromUrl(url);
 
