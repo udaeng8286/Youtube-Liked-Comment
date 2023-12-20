@@ -14,6 +14,3 @@ export const commentSlice = createSlice({
 
 export const { setComment } = commentSlice.actions;
 export default commentSlice.reducer;
-
-// () => {} -> return 명시 필요, void 타입(리턴값이 없는 함수)
-// () => ... -> return값이 있는 함수라고 간주

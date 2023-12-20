@@ -22,8 +22,8 @@ const store = configureStore({
   reducer: persistedReducer,
 });
 
-export type RootState = ReturnType<typeof store.getState>; // useAppSelector
-export type AppDispatch = typeof store.dispatch; // useAppDispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
 
