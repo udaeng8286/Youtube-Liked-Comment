@@ -2,7 +2,6 @@ import VideoLinkInput from "../components/VideoLinkInput";
 import VideoInformation from "../components/VideoInformation";
 import Comments from "../components/Comments";
 import styled from "styled-components";
-
 import { useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
 
@@ -25,10 +24,10 @@ const Mainpage = () => {
 export default Mainpage;
 
 const Container = styled.div`
-  width: 100%;
+  width: 55vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `;
 

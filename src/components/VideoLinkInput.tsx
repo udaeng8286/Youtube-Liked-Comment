@@ -43,13 +43,13 @@ const VideoLinkInput = () => {
 export default VideoLinkInput;
 
 const Section = styled.div`
-  height: 3em;
+  height: 2.5em;
   display: flex;
   margin-top: 2em;
 `;
 
 const Input = styled.input`
-  width: 560px;
+  width: 40vw;
   background-color: #181818;
   border: 2px solid #303030;
   color: #ffffff;
@@ -62,7 +62,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  width: 10%;
+  width: 4em;
   color: #ffff;
   background-color: #303030;
   display: flex;
