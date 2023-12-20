@@ -6,12 +6,10 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <Mainpage />
-      </Container>
-    </>
+      <Mainpage />
+    </Container>
   );
 }
 export default App;
