@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { formatViews, formatDate } from "../utility/util";
-
 import { useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
 
