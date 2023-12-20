@@ -20,4 +20,10 @@
 | :---: | :---: |
 | <img alt="김동준" src="https://static.wikia.nocookie.net/marvelkoreafan/images/2/23/Thor.jpg/revision/latest/scale-to-width-down/900?cb=20150711065518&path-prefix=ko" height="100" width="100"> | <img alt="송유정" src="https://m.12inch.co.kr/web/product/big/201903/76e77ee78ee4288fc890f68ae29ba977.jpg" height="100" width="100">  |
 
+| 김동준 | 송유정 |
+| ------------ | ------------- |
+| <img alt="김동준" src="https://static.wikia.nocookie.net/marvelkoreafan/images/2/23/Thor.jpg/revision/latest/scale-to-width-down/900?cb=20150711065518&path-prefix=ko" height="100" width="100">l | <img alt="송유정" src="https://m.12inch.co.kr/web/product/big/201903/76e77ee78ee4288fc890f68ae29ba977.jpg" height="100" width="100">  |
+| Content Cell | Content Cell  |
+
+
 
