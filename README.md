@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+<!-- ![Group 4](https://github.com/HomeSecurityTeam/Youtube-Liked-Comment/assets/130089426/384f77ac-da92-4f0c-aab4-9a9ff1ed2345) -->
+<main align="center">
+    <h3 align="center">👍유튜브 영상의 댓글을 좋아요가 많은 순서대로 볼 수 있어요!🗨️</h3> 
+</main>
+<br />
+## 개요
+- 팀명 : HomeSecurity
+- 개발 인원 : 2명
+- 프로젝트 명 : YouTube Liked Comment
+- 프로젝트 기간 : 2023.12.02 - 2023.12.20
+- 팀원 : 김동준, 송유정
+한줄 소개 : 원하는 유튜브 영상의 댓글을 좋아요가 많은 순서대로 볼 수 있는 웹 사이트
+<br />
+배포 링크 : 🌐 [YouTubeLikedComment](https://youtube-liked-comment.vercel.app/)
+<br />
+##  Team
+| 김동 | 송유정 |
+| :---: | :---: |
+| <img alt="김동준" src="https://avatars.githubusercontent.com/u/101828759?v=4" height="100" width="100"> | <img alt="송유정" src="https://avatars.githubusercontent.com/u/101828759?v=4" height="100" width="100">  |
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
