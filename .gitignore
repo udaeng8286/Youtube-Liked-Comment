@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 ApiKey.ts
+
+# Ignore 
+.env
+.env.local
