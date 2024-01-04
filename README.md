@@ -19,6 +19,7 @@
 | 김동준 | 송유정 |
 | :------------: | :-------------: |
 | <div style="display: flex; justify-content: center; align-items: center;"><img alt="김동준" src="https://static.wikia.nocookie.net/marvelkoreafan/images/2/23/Thor.jpg/revision/latest/scale-to-width-down/900?cb=20150711065518&path-prefix=ko" height="100" width="100" style="display: block;"></div> | <div style="display: flex; justify-content: center; align-items: center;"><img alt="송유정" src="https://m.12inch.co.kr/web/product/big/201903/76e77ee78ee4288fc890f68ae29ba977.jpg" height="100" width="100" style="display: block;"></div> |
+| @kimD0ngjun | @udaeng8286 |
 | - redux 기반 상태관리 및 유지 <br /> - Vercel 기반 배포 | - 전체적인 UI 및 레이아웃 구현 <br /> - YouTube API를 활용한 <br /> 영상 댓글 좋아요 순 정렬 구현  |
 
 <br />
